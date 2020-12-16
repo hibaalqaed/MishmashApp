@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Icon } from "react-native";
+import { Icon, Text } from "native-base";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -68,4 +68,9 @@ export const TotalPrice = styled.Text`
 export const CartButtonStyled = styled(Icon)`
   color: black;
   margin-right: 10px;
+`;
+
+export const CartTextStyled = styled(Text)`
+  color: ${(props) => props.theme.backgroundColor};
+  font-size: 20px;
 `;

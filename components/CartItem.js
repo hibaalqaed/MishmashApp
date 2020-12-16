@@ -1,7 +1,7 @@
 import React from "react";
 import { ListItem, Body, Text } from "native-base";
 
-import TotalPrice from "../styles";
+import { TotalPrice } from "../styles";
 
 const CartItem = ({ item }) => {
   return (
