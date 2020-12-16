@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Icon } from "react-native";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -55,4 +56,16 @@ export const BranchDetailImage = styled.Image`
 export const BranchDetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40;
+`;
+
+export const TotalPrice = styled.Text`
+  color: ${(props) => props.theme.pink};
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+`;
+
+export const CartButtonStyled = styled(Icon)`
+  color: black;
+  margin-right: 10px;
 `;

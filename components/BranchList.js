@@ -5,14 +5,15 @@ import React from "react";
 import BranchItem from "./BranchItem";
 
 // Stores
-import branchStore from "../stores/BranchStore";
+import branchStore from "../stores/branchStore";
 
 import { Content, List } from "native-base";
+import { Spinner } from "native-base";
 
-function BranchList() {
+function BranchList({ navigation }) {
   if (branchStore.loading) return <Spinner />;
   const branchList = branchStore.branches.map((branch) => (
-    <BranchItem branch={branch} key={branch.id} />
+    <BranchItem navigation={navigation} branch={branch} key={branch.id} />
   ));
   return (
     <Content>

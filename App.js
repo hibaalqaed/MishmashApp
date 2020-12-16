@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-// Components
-import Home from "./components/Home";
-import BranchList from "./components/BranchList";
-import BranchDetail from "./components/BranchDetail";
+// Navigation
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./components/navigation";
 
 // Styling
 import { ThemeProvider } from "styled-components";
@@ -29,9 +28,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ThemeProvider theme={theme.light}>
-        {/* <Home /> */}
-        {/* <BranchList /> */}
-        <BranchDetail />
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
       </ThemeProvider>
       <StatusBar style="auto" />
     </View>
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });

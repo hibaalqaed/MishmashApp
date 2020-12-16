@@ -5,9 +5,11 @@ import { Image } from "react-native";
 import { ListItem } from "native-base";
 import { BranchItemStyled } from "../styles";
 
-const BranchItem = ({ branch }) => {
+const BranchItem = ({ branch, navigation }) => {
   return (
-    <ListItem>
+    <ListItem
+      onPress={() => navigation.navigate("BranchDetail", { branch: branch })}
+    >
       <Image
         style={{ width: 100, height: 100 }}
         source={{ uri: branch.image }}

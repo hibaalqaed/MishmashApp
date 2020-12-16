@@ -12,7 +12,7 @@ import {
   TopStyling,
 } from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <>
       <HomeBackground source={mishmashimg}>
@@ -21,9 +21,7 @@ const Home = () => {
             <Title>Mishmash Restaurant</Title>
           </TopStyling>
           <BottomStyling>
-            <ButtonStyled
-              onPress={() => alert("Take me to the list of bakeries")}
-            >
+            <ButtonStyled onPress={() => navigation.navigate("BranchList")}>
               Click here to skip
             </ButtonStyled>
           </BottomStyling>
