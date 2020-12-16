@@ -26,22 +26,13 @@ const theme = {
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
       <ThemeProvider theme={theme.light}>
         <NavigationContainer>
           <RootNavigator />
         </NavigationContainer>
       </ThemeProvider>
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});

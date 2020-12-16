@@ -11,6 +11,7 @@ const CartButton = () => {
     <Button transparent light onPress={() => navigation.navigate("Cart")}>
       <CartTextStyled>{cartStore.totalQuantity}</CartTextStyled>
       <CartButtonStyled type="MaterialCommunityIcons" name="cart" />
+      {/* <CartTextStyled>{cartStore.totalPrice} KD</CartTextStyled> */}
     </Button>
   );
 };

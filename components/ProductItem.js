@@ -1,42 +1,59 @@
-import { Button, Left, ListItem, Right, Text } from "native-base";
+import {
+  Body,
+  Container,
+  Content,
+  Left,
+  ListItem,
+  Right,
+  Text,
+} from "native-base";
 import React, { useState } from "react";
 import NumericInput from "react-native-numeric-input";
-import { BranchItemStyled, BranchImage } from "../styles";
+import {
+  AddItemTextStyled,
+  AddItemButtonStyled,
+  BranchItemStyled,
+  BranchImage,
+} from "../styles";
 import cartStore from "../stores/cartStore";
 
 const ProductItem = ({ product }) => {
-  const [quantity, setQuantitu] = useState;
+  const [quantity, setQuantitu] = useState(1);
 
   const handleAdd = () => {
-    const newItem = { quantity, cookieId: cookie.id };
+    const newItem = { quantity, productId: product.id };
     console.log("handleAdd -> newItem", newItem);
     cartStore.addItemToCart(newItem);
   };
 
   return (
     <ListItem>
-      <Left>
-        <BranchImage source={{ uri: product.image }} />
+      <Content>
+        <Left>
+          <BranchImage source={{ uri: product.image }} />
+        </Left>
         <BranchItemStyled>
-          {product.name}
-          <Text note style={{ fontSize: 16, color: "#444" }}>
-            {product.price} KD
-          </Text>
+          <Body>
+            <Text>{product.name}</Text>
+            <Text note style={{ fontSize: 16, color: "#444" }}>
+              {product.price} KD
+            </Text>
+          </Body>
         </BranchItemStyled>
-      </Left>
-      <Right>
-        <NumericInput
-          rounded
-          value={quantity}
-          onChange={setQuantitu}
-          totalHeight={40}
-          totalWidth={70}
-          initValue={1}
-        />
-        <Button onPress={handleAdd}>
-          <Text>Add</Text>
-        </Button>
-      </Right>
+        <Right>
+          <NumericInput
+            rounded
+            value={quantity}
+            onChange={setQuantitu}
+            totalHeight={40}
+            totalWidth={70}
+            // initValue={1}
+          />
+          <AddItemButtonStyled onPress={handleAdd}>
+            <AddItemTextStyled>Add</AddItemTextStyled>
+          </AddItemButtonStyled>
+        </Right>
+      </Content>
     </ListItem>
   );
 };

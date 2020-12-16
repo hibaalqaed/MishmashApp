@@ -9,6 +9,9 @@ import cartStore from "../stores/cartStore";
 // Components
 import CartItem from "./CartItem";
 
+// Styles
+import { CheckoutButton, CheckoutButtonText } from "../styles";
+
 const CartList = () => {
   if (productStore.loading) return <Spinner />;
   const cartList = cartStore.items
@@ -18,7 +21,14 @@ const CartList = () => {
     }))
     .map((item) => <CartItem item={item} key={item.name} />);
 
-  return <List>{cartList}</List>;
+  return (
+    <>
+      <List>{cartList}</List>
+      <CheckoutButton onPress={cartStore.checkout}>
+        <CheckoutButtonText>Checkout</CheckoutButtonText>
+      </CheckoutButton>
+    </>
+  );
 };
 
 export default observer(CartList);

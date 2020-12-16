@@ -15,7 +15,7 @@ import {
 import { Spinner } from "native-base";
 import ProductList from "./ProductList";
 
-const BranchDetail = ({ navigation, route }) => {
+const BranchDetail = ({ route }) => {
   const { branch } = route.params;
 
   if (branchStore.loading) return <Spinner />;

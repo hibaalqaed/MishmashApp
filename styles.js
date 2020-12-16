@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import { Icon, Text } from "native-base";
+import { Button, Icon, Text } from "native-base";
 
 export const HomeBackground = styled.ImageBackground`
-  flex: 1;
+  flex: 1px;
   width: 100%;
   height: 100%;
 `;
@@ -15,12 +15,12 @@ export const TopStyling = styled.View`
 
 export const Title = styled.Text`
   color: #fff;
-  font-size: 38;
+  font-size: 38px;
   text-align: center;
 `;
 
 export const OverLayContainer = styled.View`
-  flex: 1;
+  flex: 1px;
   background-color: rgba(100, 40, 60, 0.4);
 `;
 
@@ -31,35 +31,45 @@ export const BottomStyling = styled.View`
 `;
 
 export const ButtonStyled = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   color: #fff;
 `;
 
 export const BranchItemStyled = styled.Text`
   color: ${(props) => props.theme.mainColor};
-  font-size: 18;
-  margin-top: 10;
-  margin-bottom: 10;
-  margin-left: 16;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 16px;
   width: 100%;
 `;
 
+export const BranchImage = styled.Image`
+  width: 100px;
+  height: 100px;
+`;
+
 export const BranchDetailWrapper = styled.View`
-  margin-top: 50;
+  margin-top: 10px;
 `;
 
 export const BranchDetailImage = styled.Image`
-  width: 150;
-  height: 150;
+  width: 150px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const BranchDetailTitle = styled.Text`
   font-weight: bold;
-  font-size: 40;
+  font-size: 40px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const TotalPrice = styled.Text`
-  color: ${(props) => props.theme.pink};
+  /* ${(props) => props.theme.pink}; */
+  color: black;
   font-size: 15px;
   font-weight: bold;
   margin-left: 10px;
@@ -71,6 +81,39 @@ export const CartButtonStyled = styled(Icon)`
 `;
 
 export const CartTextStyled = styled(Text)`
-  color: ${(props) => props.theme.backgroundColor};
+  /* ${(props) => props.theme.backgroundColor}; */
+  color: black;
   font-size: 20px;
+`;
+
+export const AddItemButtonStyled = styled(Button)`
+  height: 30px;
+  width: 70px;
+  margin-top: 10;
+`;
+
+export const AddItemTextStyled = styled.Text`
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+`;
+
+export const TrashIcon = styled(Icon)`
+  color: red;
+`;
+
+export const CheckoutButton = styled.TouchableOpacity`
+  align-self: stretch;
+  align-items: center;
+  padding: 20px;
+  background-color: purple;
+  margin-top: 30px;
+`;
+
+export const CheckoutButtonText = styled.Text`
+  color: #fcfdff;
+  font-weight: bold;
+  font-size: 18px;
 `;
