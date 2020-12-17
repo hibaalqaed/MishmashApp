@@ -7,6 +7,8 @@ import BranchList from "../BranchList";
 import BranchDetail from "../BranchDetail";
 import CartList from "../CartList";
 import CartButton from "../buttons/CartButton";
+import Signin from "../authentication/Signin";
+import Signup from "../authentication/Signup";
 
 function RootNavigator() {
   const { Navigator, Screen } = createStackNavigator();
@@ -48,6 +50,18 @@ function RootNavigator() {
       />
 
       <Screen name="Cart" component={CartList} />
+
+      <Screen
+        name="Signup"
+        component={Signup}
+        options={{ headerShown: false }}
+      />
+
+      <Screen
+        name="Signin"
+        component={Signin}
+        options={{ headerShown: false }}
+      />
     </Navigator>
   );
 }
